@@ -1,0 +1,99 @@
+<!--pages/jiaoyijilu/jiaoyijilu.wxml-->
+
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">默认海报</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">送父母</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">送朋友</view>
+  <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">送给TA</view>
+</view>
+
+<!-- 轮播 -->
+<swiper current="{{currentTab}}" class="swiper-box" bindtap="aaa" duration="300" style="height:{{900}}rpx" bindchange="bindChange">
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+  <!-- 1 -->
+    <swiper-item item-id='1'>
+      <view class='border'>
+        <view style='width:0px;height:0px;overflow:hidden;'>
+          <canvas canvas-id="myCanvas" style="position:fixed;visibily:hidden;width: 646px; height: 966px; position:fixed;top:-1000px;left:-1000px" />
+        </view>
+        <image src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}" />
+        <!-- 个人信息 -->
+        <view class='infos'>
+          <view class='head'>
+            <image src='http://xiaolupic.eacase.cn/images/navs2.png'></image>
+          </view>
+          <view>乌尼日琪琪格</view>
+        </view>
+        <!-- 二维码 -->
+        <view class='wrap'>
+          <image src='http://xiaolupic.eacase.cn/images/share/ma_07.png'></image>
+        </view>
+      </view>
+      <!-- 2 -->
+    </swiper-item>
+        <swiper-item>
+      <view class='border'>
+        <view style='width:0px;height:0px;overflow:hidden;'>
+          <canvas canvas-id="myCanvas" style="position:fixed;visibily:hidden;width: 646px; height: 966px;position:fixed;top:-1000px;left:-1000px" />
+        </view>
+        <image src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}" />
+        <!-- 个人信息 -->
+        <view class='infos'>
+          <view class='head'>
+            <image src='http://xiaolupic.eacase.cn/images/navs2.png'></image>
+          </view>
+          <view>乌尼日琪琪格</view>
+        </view>
+        <!-- 二维码 -->
+        <view class='wrap'>
+          <image src='http://xiaolupic.eacase.cn/images/share/ma_07.png'></image>
+        </view>
+      </view>
+    </swiper-item>
+    <!-- 3 -->
+        <swiper-item>
+      <view class='border'>
+        <view style='width:0px;height:0px;overflow:hidden;'>
+          <canvas canvas-id="myCanvas" style="position:fixed;visibily:hidden;width: 646px; height: 966px;position:fixed;top:-1000px;left:-1000px" />
+        </view>
+        <image src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}" />
+        <!-- 个人信息 -->
+        <view class='infos'>
+          <view class='head'>
+            <image src='http://xiaolupic.eacase.cn/images/navs2.png'></image>
+          </view>
+          <view>乌尼日琪琪格</view>
+        </view>
+        <!-- 二维码 -->
+        <view class='wrap'>
+          <image src='http://xiaolupic.eacase.cn/images/share/ma_07.png'></image>
+        </view>
+      </view>
+    </swiper-item>
+    <!-- 4 -->
+        <swiper-item>
+      <view class='border'>
+        <view style='width:0px;height:0px;overflow:hidden;'>
+          <canvas canvas-id="myCanvas" style="position:fixed;visibily:hidden;width: 646px; height: 966px;position:fixed;top:-1000px;left:-1000px" />
+        </view>
+        <image src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}" />
+        <!-- 个人信息 -->
+        <view class='infos'>
+          <view class='head'>
+            <image src='http://xiaolupic.eacase.cn/images/navs2.png'></image>
+          </view>
+          <view>乌尼日琪琪格</view>
+        </view>
+        <!-- 二维码 -->
+        <view class='wrap'>
+          <image src='http://xiaolupic.eacase.cn/images/share/ma_07.png'></image>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='share'>
+  <button class='le_btns' bindtap="onSaveImg">保存图片</button>
+  <button open-type='share'>发给朋友</button>
+</view>
